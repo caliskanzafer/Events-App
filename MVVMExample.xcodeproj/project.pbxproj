@@ -13,6 +13,16 @@
 		1E906C24297C32FC00EA4406 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E906C22297C32FC00EA4406 /* Main.storyboard */; };
 		1E906C26297C32FD00EA4406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E906C25297C32FD00EA4406 /* Assets.xcassets */; };
 		1E906C29297C32FD00EA4406 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E906C27297C32FD00EA4406 /* LaunchScreen.storyboard */; };
+		1E906C31297C334100EA4406 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E906C30297C334100EA4406 /* AppCoordinator.swift */; };
+		1E906C33297C35E100EA4406 /* EventListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E906C32297C35E100EA4406 /* EventListCoordinator.swift */; };
+		1E906C35297C369500EA4406 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E906C34297C369500EA4406 /* EventListViewController.swift */; };
+		1E906C37297C3C4C00EA4406 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E906C36297C3C4C00EA4406 /* UIColor+Extensions.swift */; };
+		1E906C3D297C3E9400EA4406 /* MVVMExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1E906C3B297C3E9300EA4406 /* MVVMExample.xcdatamodeld */; };
+		1E906C3F297C400200EA4406 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E906C3E297C400200EA4406 /* CoreDataManager.swift */; };
+		1E906C43297C64E000EA4406 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E906C42297C64E000EA4406 /* EventListViewModel.swift */; };
+		1E906C45297C665200EA4406 /* AddEventCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E906C44297C665200EA4406 /* AddEventCoordinator.swift */; };
+		1E906C47297C6D9900EA4406 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E906C46297C6D9900EA4406 /* AddEventViewController.swift */; };
+		1E906C49297C6E2A00EA4406 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E906C48297C6E2A00EA4406 /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,16 @@
 		1E906C25297C32FD00EA4406 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E906C28297C32FD00EA4406 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E906C2A297C32FD00EA4406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E906C30297C334100EA4406 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		1E906C32297C35E100EA4406 /* EventListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCoordinator.swift; sourceTree = "<group>"; };
+		1E906C34297C369500EA4406 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		1E906C36297C3C4C00EA4406 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		1E906C3C297C3E9300EA4406 /* MVVMExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MVVMExample.xcdatamodel; sourceTree = "<group>"; };
+		1E906C3E297C400200EA4406 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		1E906C42297C64E000EA4406 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
+		1E906C44297C665200EA4406 /* AddEventCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventCoordinator.swift; sourceTree = "<group>"; };
+		1E906C46297C6D9900EA4406 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		1E906C48297C6E2A00EA4406 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,9 @@
 		1E906C1B297C32FC00EA4406 /* MVVMExample */ = {
 			isa = PBXGroup;
 			children = (
+				1E906C3A297C3E4D00EA4406 /* Coordinators */,
+				1E906C39297C3E4700EA4406 /* Controllers */,
+				1E906C38297C3E3900EA4406 /* Extensions */,
 				1E906C1C297C32FC00EA4406 /* AppDelegate.swift */,
 				1E906C1E297C32FC00EA4406 /* SceneDelegate.swift */,
 				1E906C20297C32FC00EA4406 /* ViewController.swift */,
@@ -63,8 +86,39 @@
 				1E906C25297C32FD00EA4406 /* Assets.xcassets */,
 				1E906C27297C32FD00EA4406 /* LaunchScreen.storyboard */,
 				1E906C2A297C32FD00EA4406 /* Info.plist */,
+				1E906C3B297C3E9300EA4406 /* MVVMExample.xcdatamodeld */,
+				1E906C3E297C400200EA4406 /* CoreDataManager.swift */,
+				1E906C42297C64E000EA4406 /* EventListViewModel.swift */,
 			);
 			path = MVVMExample;
+			sourceTree = "<group>";
+		};
+		1E906C38297C3E3900EA4406 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1E906C36297C3C4C00EA4406 /* UIColor+Extensions.swift */,
+				1E906C48297C6E2A00EA4406 /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1E906C39297C3E4700EA4406 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1E906C34297C369500EA4406 /* EventListViewController.swift */,
+				1E906C46297C6D9900EA4406 /* AddEventViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1E906C3A297C3E4D00EA4406 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				1E906C30297C334100EA4406 /* AppCoordinator.swift */,
+				1E906C32297C35E100EA4406 /* EventListCoordinator.swift */,
+				1E906C44297C665200EA4406 /* AddEventCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +192,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E906C37297C3C4C00EA4406 /* UIColor+Extensions.swift in Sources */,
+				1E906C47297C6D9900EA4406 /* AddEventViewController.swift in Sources */,
+				1E906C49297C6E2A00EA4406 /* UIViewController+Extensions.swift in Sources */,
+				1E906C31297C334100EA4406 /* AppCoordinator.swift in Sources */,
+				1E906C3D297C3E9400EA4406 /* MVVMExample.xcdatamodeld in Sources */,
+				1E906C35297C369500EA4406 /* EventListViewController.swift in Sources */,
 				1E906C21297C32FC00EA4406 /* ViewController.swift in Sources */,
 				1E906C1D297C32FC00EA4406 /* AppDelegate.swift in Sources */,
+				1E906C3F297C400200EA4406 /* CoreDataManager.swift in Sources */,
+				1E906C43297C64E000EA4406 /* EventListViewModel.swift in Sources */,
 				1E906C1F297C32FC00EA4406 /* SceneDelegate.swift in Sources */,
+				1E906C45297C665200EA4406 /* AddEventCoordinator.swift in Sources */,
+				1E906C33297C35E100EA4406 /* EventListCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +422,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1E906C3B297C3E9300EA4406 /* MVVMExample.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1E906C3C297C3E9300EA4406 /* MVVMExample.xcdatamodel */,
+			);
+			currentVersion = 1E906C3C297C3E9300EA4406 /* MVVMExample.xcdatamodel */;
+			path = MVVMExample.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1E906C11297C32FC00EA4406 /* Project object */;
 }
