@@ -16,3 +16,4 @@ final class EventListViewModel {
         coordinator?.startAddEvent()
     }
 }
+
