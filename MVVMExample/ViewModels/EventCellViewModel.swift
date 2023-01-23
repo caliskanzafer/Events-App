@@ -7,31 +7,56 @@
 import UIKit
 
 struct EventCellViewModel {
-    var yearText: String {
-        "1 year"
+    private let event: Event
+    let date = Date()
+    private static let imageCache = NSCache<NSString, UIImage>()
+    private let imageQueue = DispatchQueue(label: "imageQueue", qos: .background)
+    
+    private var cacheKey: String {
+        event.objectID.description
     }
     
-    var monthText: String {
-        "3 months"
+    var timeRemaining: [String] {
+        guard let eventDate = event.date else { return [] }
+        return date.timeRemaining(until: eventDate)?.components(separatedBy: ",") ?? []
     }
     
-    var weekText: String {
-        "2 weeks"
+    var dateText: String? {
+        guard let eventDate = event.date else { return nil}
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MM yyyy"
+        return dateFormatter.string(from: eventDate)
     }
     
-    var dayText: String {
-        "2 days"
-    }
-    
-    var dateText: String {
-        "25 May 2023"
-    }
-    
-    var eventName: String {
-        "Swift Learning"
+    var eventName: String? {
+        return event.name
     }
     
     var backgroundImage: UIImage {
-        UIImage(imageLiteralResourceName: "new-year")
+        guard let image = event.image else { return UIImage()}
+        return UIImage(data: image) ?? UIImage()
     }
+    
+    init(_ event: Event) {
+        self.event = event
+    }
+    
+    func loadImage(completion: @escaping(UIImage?) -> Void) {
+        if let image = Self.imageCache.object(forKey: cacheKey as NSString) {
+            completion(image)
+        }else {
+            imageQueue.async {
+                guard let imageData = self.event.image, let image = UIImage(data: imageData) else {
+                    completion(nil)
+                    return
+                    
+                }
+                Self.imageCache.setObject(image, forKey: self.cacheKey as NSString)
+                DispatchQueue.main.async {
+                    completion(image)
+                }
+            }
+        }
+    }
+    
 }

@@ -9,10 +9,7 @@ import UIKit
 
 final class EventCell: UITableViewCell {
     
-    private let yearLabel = UILabel()
-    private let monthLabel = UILabel()
-    private let weekLabel = UILabel()
-    private let dayLabel = UILabel()
+    private let timeRemainingLabels = [UILabel(), UILabel(), UILabel(), UILabel()]
     private let dateLabel = UILabel()
     private let eventNameLabel = UILabel()
     
@@ -32,11 +29,11 @@ final class EventCell: UITableViewCell {
     }
     
     private func setupViews(){
-        [yearLabel, monthLabel, weekLabel, dayLabel, dateLabel, eventNameLabel, backgroundImage, verticalStackView].forEach {
+        (timeRemainingLabels + [dateLabel, eventNameLabel, backgroundImage, verticalStackView]).forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
-        [yearLabel, monthLabel, weekLabel, dayLabel].forEach {
+        timeRemainingLabels.forEach {
             $0.font = .systemFont(ofSize: 25, weight: .medium)
             $0.textColor = .white
         }
@@ -55,10 +52,10 @@ final class EventCell: UITableViewCell {
         contentView.addSubview(verticalStackView)
         contentView.addSubview(eventNameLabel)
         
-        verticalStackView.addArrangedSubview(yearLabel)
-        verticalStackView.addArrangedSubview(monthLabel)
-        verticalStackView.addArrangedSubview(weekLabel)
-        verticalStackView.addArrangedSubview(dayLabel)
+        timeRemainingLabels.forEach {
+            verticalStackView.addArrangedSubview($0)
+        }
+        
         verticalStackView.addArrangedSubview(UIView())
         verticalStackView.addArrangedSubview(dateLabel)
         
@@ -73,18 +70,19 @@ final class EventCell: UITableViewCell {
         backgroundImage.heightAnchor.constraint(equalToConstant: 250).isActive = true
         verticalStackView.pinToSuperview([.top, .right, .bottom], constant: 15)
         eventNameLabel.pinToSuperview([.left, .bottom], constant: 10)
-        //        dateLabel.pinToSuperview([.right, .bottom], constant: 10)
+//                dateLabel.pinToSuperview([.right, .bottom], constant: 10)
     }
     
     func update(with cell: EventCellViewModel){
-        self.yearLabel.text = cell.yearText
-        self.monthLabel.text = cell.monthText
-        self.weekLabel.text = cell.weekText
-        self.dayLabel.text = cell.dayText
+        cell.timeRemaining.enumerated().forEach {
+            timeRemainingLabels[$0.offset].text = $0.element
+        }
         self.dateLabel.text = cell.dateText
         
         self.eventNameLabel.text = cell.eventName
-        self.backgroundImage.image = cell.backgroundImage
+        cell.loadImage { image in
+            self.backgroundImage.image = image
+        }
     }
     
 }
