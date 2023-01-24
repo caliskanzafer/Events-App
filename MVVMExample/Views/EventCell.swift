@@ -9,7 +9,7 @@ import UIKit
 
 final class EventCell: UITableViewCell {
     
-    private let timeRemainingLabels = [UILabel(), UILabel(), UILabel(), UILabel()]
+    private let timeRemainingStackView = TimeRemainingStackView()
     private let dateLabel = UILabel()
     private let eventNameLabel = UILabel()
     
@@ -29,14 +29,12 @@ final class EventCell: UITableViewCell {
     }
     
     private func setupViews(){
-        (timeRemainingLabels + [dateLabel, eventNameLabel, backgroundImage, verticalStackView]).forEach {
+        timeRemainingStackView.setup()
+        
+        [dateLabel, eventNameLabel, backgroundImage, verticalStackView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
-        timeRemainingLabels.forEach {
-            $0.font = .systemFont(ofSize: 25, weight: .medium)
-            $0.textColor = .white
-        }
         
         dateLabel.font = .systemFont(ofSize: 22, weight: .medium)
         dateLabel.textColor = .white
@@ -52,9 +50,7 @@ final class EventCell: UITableViewCell {
         contentView.addSubview(verticalStackView)
         contentView.addSubview(eventNameLabel)
         
-        timeRemainingLabels.forEach {
-            verticalStackView.addArrangedSubview($0)
-        }
+        verticalStackView.addSubview(timeRemainingStackView)
         
         verticalStackView.addArrangedSubview(UIView())
         verticalStackView.addArrangedSubview(dateLabel)
@@ -74,9 +70,11 @@ final class EventCell: UITableViewCell {
     }
     
     func update(with cell: EventCellViewModel){
-        cell.timeRemaining.enumerated().forEach {
-            timeRemainingLabels[$0.offset].text = $0.element
+        if let timeRemainingViewModel = cell.timeRemainingViewModel {
+            timeRemainingStackView.update(with: timeRemainingViewModel)
         }
+        
+        
         self.dateLabel.text = cell.dateText
         
         self.eventNameLabel.text = cell.eventName

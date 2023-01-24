@@ -5,12 +5,19 @@
 //  Created by Zafer Çalışkan on 22.01.2023.
 //
 import UIKit
+import CoreData
 
 struct EventCellViewModel {
     private let event: Event
     let date = Date()
     private static let imageCache = NSCache<NSString, UIImage>()
     private let imageQueue = DispatchQueue(label: "imageQueue", qos: .background)
+    var onSelect: (NSManagedObjectID) -> Void = { _ in }
+    
+    var timeRemainingViewModel: TimeRemainingViewModel? {
+        guard let eventDate = event.date, let timeRemainingParts = date.timeRemaining(until: eventDate)?.components(separatedBy: ",") else { return nil }
+        return TimeRemainingViewModel(timeRemainingParts: timeRemainingParts, mode: .cell)
+    }
     
     private var cacheKey: String {
         event.objectID.description
@@ -57,6 +64,10 @@ struct EventCellViewModel {
                 }
             }
         }
+    }
+    
+    func didSelect() {
+        onSelect(event.objectID)
     }
     
 }
