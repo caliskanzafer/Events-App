@@ -9,3 +9,7 @@
 
 ### Architecture
 - MVVM-C
+
+------------
+
+This project was made by following James Haville's [tutorial](https://www.youtube.com/playlist?list=PLLvVbXNzMjks_NtDCdluOYXdo8Ikx2GjH "tutorial")
