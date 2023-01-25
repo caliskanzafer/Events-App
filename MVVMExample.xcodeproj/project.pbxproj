@@ -41,6 +41,7 @@
 		1EB17C112981A7E600D83E9F /* EditEventCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB17C102981A7E600D83E9F /* EditEventCoordinator.swift */; };
 		1EB17C152981A99B00D83E9F /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB17C142981A99B00D83E9F /* EditEventViewController.swift */; };
 		1EB17C172981AA3F00D83E9F /* EditEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB17C162981AA3F00D83E9F /* EditEventViewModel.swift */; };
+		1EB17C1A2981B4D300D83E9F /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB17C192981B4D300D83E9F /* EventService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		1EB17C102981A7E600D83E9F /* EditEventCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventCoordinator.swift; sourceTree = "<group>"; };
 		1EB17C142981A99B00D83E9F /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
 		1EB17C162981AA3F00D83E9F /* EditEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewModel.swift; sourceTree = "<group>"; };
+		1EB17C192981B4D300D83E9F /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		1E906C1B297C32FC00EA4406 /* MVVMExample */ = {
 			isa = PBXGroup;
 			children = (
+				1EB17C182981B4C600D83E9F /* Services */,
 				1E906C4F297C819E00EA4406 /* Views */,
 				1E906C4C297C785100EA4406 /* ViewModels */,
 				1E906C3A297C3E4D00EA4406 /* Coordinators */,
@@ -191,6 +194,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		1EB17C182981B4C600D83E9F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1EB17C192981B4D300D83E9F /* EventService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EB17C1A2981B4D300D83E9F /* EventService.swift in Sources */,
 				1E906C5B297DC3D800EA4406 /* UIView+Extensions.swift in Sources */,
 				1E135FAF298048D5009CA615 /* EventDetailViewController.swift in Sources */,
 				1EB17C112981A7E600D83E9F /* EditEventCoordinator.swift in Sources */,

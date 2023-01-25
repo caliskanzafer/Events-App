@@ -23,45 +23,23 @@ final class CoreDataManager {
         persistentContainer.viewContext
     }
     
-    func saveEvent(name:String, date: Date, image: UIImage){
-        let event = Event(context: moc)
-        
-        event.setValue(name, forKey: "name")
-        
-        let resizedImage = image.sameAspectRatio(newHeight: 250)
-        
-        let imageData = image.jpegData(compressionQuality: 0.5)
-        event.setValue(imageData, forKey: "image")
-        event.setValue(date, forKey: "date")
-        
+
+
+    
+    
+    func get<T: NSManagedObject>(_ id: NSManagedObjectID) -> T? {
         do {
-            try moc.save()
+            return try moc.existingObject(with: id) as? T
         }catch {
             print(error)
         }
+        return nil
     }
     
-    func updateEvent(event: Event, name:String, date: Date, image: UIImage){
-        event.setValue(name, forKey: "name")
-        
-        let resizedImage = image.sameAspectRatio(newHeight: 250)
-        
-        let imageData = image.jpegData(compressionQuality: 0.5)
-        event.setValue(imageData, forKey: "image")
-        event.setValue(date, forKey: "date")
-        
+    func getAll<T: NSManagedObject>() -> [T]{
         do {
-            try moc.save()
-        }catch {
-            print(error)
-        }
-    }
-    
-    func fetchEvent() -> [Event]{
-        do {
-            let nsFetchRequest = NSFetchRequest<Event>(entityName: "Event")
-            let events = try moc.fetch(nsFetchRequest)
-            return events
+            let nsFetchRequest = NSFetchRequest<T>(entityName: "\(T.self)")
+            return try moc.fetch(nsFetchRequest)
         }catch {
             print(error)
             return []
@@ -69,12 +47,22 @@ final class CoreDataManager {
         
     }
     
-    func getEvent(_ id: NSManagedObjectID) -> Event? {
+    
+    func save() {
         do {
-            return try moc.existingObject(with: id) as? Event
+            try moc.save()
         }catch {
             print(error)
         }
-        return nil
     }
+    
+    
+    //    func getEvent(_ id: NSManagedObjectID) -> Event? {
+    //        do {
+    //            return try moc.existingObject(with: id) as? Event
+    //        }catch {
+    //            print(error)
+    //        }
+    //        return nil
+    //    }
 }

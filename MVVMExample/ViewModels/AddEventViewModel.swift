@@ -26,7 +26,7 @@ final class AddEventViewModel {
     private var backgroundImageViewModel: TitleSubtitleCellViewModel?
     
     private let eventsCellBuilder: EventsCellBuilder
-    private let coreDataManager: CoreDataManager
+    private let eventService: EventServiceProtocol
     
     lazy var dateFormatter : DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -35,9 +35,9 @@ final class AddEventViewModel {
     }()
     
     
-    init(eventsCellBuilder: EventsCellBuilder, coreDataManager: CoreDataManager = CoreDataManager.shared) {
+    init(eventsCellBuilder: EventsCellBuilder, eventService: EventServiceProtocol = EventService()) {
         self.eventsCellBuilder = eventsCellBuilder
-        self.coreDataManager = coreDataManager
+        self.eventService = eventService
     }
     func viewDidLoad(){
         setupCells()
@@ -58,7 +58,8 @@ final class AddEventViewModel {
     
     func tappedDone() {
         guard let name = nameCellViewModel?.subtitle, let dateString = dateCellViewModel?.subtitle, let image = backgroundImageViewModel?.image, let date = dateFormatter.date(from: dateString) else { return }
-        coreDataManager.saveEvent(name: name, date: date, image: image)
+        eventService.perform(.add, data: EventService.EventDataInput(name: name, date: date, image: image))
+        
         coordinator?.didFinishSaveEvent()
         
     }
