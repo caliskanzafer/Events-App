@@ -47,15 +47,15 @@ final class AddEventCoordinator: Coordinator {
         self.completion = completion
         guard let modalNavigationController = modalNavigationController else { return }
         let imagePickerCoordinator = ImagePickerCoordinator(navigationController: modalNavigationController)
+        imagePickerCoordinator.onFinishPicking = { image in
+            self.completion(image)
+            self.modalNavigationController?.dismiss(animated: false)
+        }
         imagePickerCoordinator.parentCoordinator = self
         childCoordinators.append(imagePickerCoordinator)
         imagePickerCoordinator.start()
     }
     
-    func didFinishImagePicking(_ image: UIImage) {
-        completion(image)
-        modalNavigationController?.dismiss(animated: false)
-    }
     
     
     func childDidFinish(_ childCoordinator: Coordinator) {

@@ -103,6 +103,36 @@
             </objects>
             <point key="canvasLocation" x="1865" y="5"/>
         </scene>
+        <!--Edit Event View Controller-->
+        <scene sceneID="sxg-c8-1t5">
+            <objects>
+                <viewController storyboardIdentifier="EditEventViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Yis-NQ-svw" customClass="EditEventViewController" customModule="MVVMExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eCD-0w-okh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="B3L-SF-KgM">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="P70-uu-mYv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B3L-SF-KgM" firstAttribute="top" secondItem="P70-uu-mYv" secondAttribute="top" id="0e5-Nh-G3M"/>
+                            <constraint firstItem="P70-uu-mYv" firstAttribute="trailing" secondItem="B3L-SF-KgM" secondAttribute="trailing" id="3Yf-fH-uBg"/>
+                            <constraint firstItem="P70-uu-mYv" firstAttribute="bottom" secondItem="B3L-SF-KgM" secondAttribute="bottom" id="Qdt-h8-3R7"/>
+                            <constraint firstItem="B3L-SF-KgM" firstAttribute="leading" secondItem="P70-uu-mYv" secondAttribute="leading" id="XLV-GA-yZT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="B3L-SF-KgM" id="7xX-20-YSM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L6c-DU-gmV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2733" y="8"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

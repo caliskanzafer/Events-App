@@ -38,6 +38,9 @@
 		1E906C57297DBFA800EA4406 /* EventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E906C56297DBFA800EA4406 /* EventCellViewModel.swift */; };
 		1E906C59297DC19000EA4406 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E906C58297DC19000EA4406 /* EventCell.swift */; };
 		1E906C5B297DC3D800EA4406 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E906C5A297DC3D800EA4406 /* UIView+Extensions.swift */; };
+		1EB17C112981A7E600D83E9F /* EditEventCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB17C102981A7E600D83E9F /* EditEventCoordinator.swift */; };
+		1EB17C152981A99B00D83E9F /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB17C142981A99B00D83E9F /* EditEventViewController.swift */; };
+		1EB17C172981AA3F00D83E9F /* EditEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB17C162981AA3F00D83E9F /* EditEventViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,9 @@
 		1E906C56297DBFA800EA4406 /* EventCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellViewModel.swift; sourceTree = "<group>"; };
 		1E906C58297DC19000EA4406 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		1E906C5A297DC3D800EA4406 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		1EB17C102981A7E600D83E9F /* EditEventCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventCoordinator.swift; sourceTree = "<group>"; };
+		1EB17C142981A99B00D83E9F /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
+		1EB17C162981AA3F00D83E9F /* EditEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,7 @@
 				1E906C34297C369500EA4406 /* EventListViewController.swift */,
 				1E906C46297C6D9900EA4406 /* AddEventViewController.swift */,
 				1E135FAE298048D5009CA615 /* EventDetailViewController.swift */,
+				1EB17C142981A99B00D83E9F /* EditEventViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -155,6 +162,7 @@
 				1E906C44297C665200EA4406 /* AddEventCoordinator.swift */,
 				1E906C52297D814700EA4406 /* ImagePickerCoordinator.swift */,
 				1E135FAC298047D0009CA615 /* EventDetailCoordinator.swift */,
+				1EB17C102981A7E600D83E9F /* EditEventCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -168,6 +176,7 @@
 				1E906C56297DBFA800EA4406 /* EventCellViewModel.swift */,
 				1E135FB0298049ED009CA615 /* EventDetailViewModel.swift */,
 				1E135FB429806B25009CA615 /* TimeRemainingViewModel.swift */,
+				1EB17C162981AA3F00D83E9F /* EditEventViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -255,8 +264,10 @@
 			files = (
 				1E906C5B297DC3D800EA4406 /* UIView+Extensions.swift in Sources */,
 				1E135FAF298048D5009CA615 /* EventDetailViewController.swift in Sources */,
+				1EB17C112981A7E600D83E9F /* EditEventCoordinator.swift in Sources */,
 				1E07E90D297F0E0400622A02 /* Date+Extensions.swift in Sources */,
 				1E906C37297C3C4C00EA4406 /* UIColor+Extensions.swift in Sources */,
+				1EB17C172981AA3F00D83E9F /* EditEventViewModel.swift in Sources */,
 				1E135FB529806B25009CA615 /* TimeRemainingViewModel.swift in Sources */,
 				1E135FB1298049ED009CA615 /* EventDetailViewModel.swift in Sources */,
 				1E135FB329806A98009CA615 /* TimeRemainingStackView.swift in Sources */,
@@ -267,6 +278,7 @@
 				1E906C35297C369500EA4406 /* EventListViewController.swift in Sources */,
 				1E906C21297C32FC00EA4406 /* ViewController.swift in Sources */,
 				1E906C1D297C32FC00EA4406 /* AppDelegate.swift in Sources */,
+				1EB17C152981A99B00D83E9F /* EditEventViewController.swift in Sources */,
 				1E906C57297DBFA800EA4406 /* EventCellViewModel.swift in Sources */,
 				1E906C53297D814700EA4406 /* ImagePickerCoordinator.swift in Sources */,
 				1E906C51297C81D100EA4406 /* TitleSubtitleCell.swift in Sources */,
